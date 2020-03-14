@@ -1,0 +1,53 @@
+<div class="column level anime container ">
+  <div class="section is-marginless is-paddingless">
+    <div class="card is-horizontal columns wrapping">
+      <div
+        class="card-image column is-three-quarters"
+        style="max-width: 145px;"
+      >
+        <figure class="image glide-image">
+          <img src=" {$img}" alt="sample" />
+        </figure>
+        <div class="level-right">
+          <button
+            class="button add-title is-pulled-left is-info is-rounded"
+            style="bottom:20px; left: 20px"
+          >
+            <span class="icon is-small">
+              <i class="fas fa-plus"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="card-content column is-two-fifths">
+        <div class="media">
+          <div class="media-content">
+            <p class="title col-title is-4">{$title}</p>
+            <p class="subtitle is-6">
+              <span class="tag is-link">{$genre[0]}</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="content has-text-justified wrap-length fade"
+          id="clamp"
+          style="height: 100px;"
+        >
+          {$desc}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<figure class="column image img-wrapper glide-image">
+  <div class="title-overlay"></div>
+  <div class="img-overlay">
+    <button
+      class="delete is-large btn-delete"
+      value="11741"
+      onclick="btnDelete(this)"
+    ></button>
+  </div>
+  <img class="s-img " src="images/samples/101302l.jpg" alt="sample" />
+</figure>

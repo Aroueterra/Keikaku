@@ -1,0 +1,56 @@
+{
+    "name": "jikan/jikan-php",
+    "description": "PHP client for jikan rest",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2|^8",
+        "doctrine/annotations": "~1",
+        "guzzlehttp/guzzle": "^6.3",
+        "jms/serializer": "^1.13|^2.0",
+        "symfony/yaml": "~2.1|^3.0|^4.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "composer/composer": "^1.8",
+        "funkyproject/reflection-file": "^0.1.0",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "jikan/jikanphp-fixtures": "dev-master",
+        "php-vcr/php-vcr": "~1.3.2",
+        "php-vcr/phpunit-testlistener-vcr": "^3.0",
+        "phpro/grumphp": "^0.14.3",
+        "phpunit/phpunit": "^6.3",
+        "squizlabs/php_codesniffer": "^3.4",
+        "symfony/console": "^4.2",
+        "symfony/finder": "^4.2",
+        "symfony/var-dumper": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jikan\\JikanPHP\\": [
+                "src"
+            ],
+            "JikanPHP\\Model\\": [
+                "model"
+            ],
+            "JikanPHP\\Request\\": [
+                "request"
+            ],
+            "JikanPHP\\Helper\\": [
+                "helper"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JikanPHP\\Test\\": [
+                "test"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

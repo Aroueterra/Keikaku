@@ -1,0 +1,163 @@
+#avatarselect value
+title
+description
+theme
+comment1
+comment2
+
+save
+
+
+
+======================================
+
+getDuration() * getEpisodes() 
+
+https://anilist.co/anime/107201/Kyokou-Suiri/stats
+https://jikan-me.github.io/jikan-docs/objects/model/anime/anime/
+https://canvasjs.com/php-charts/bar-chart/
+
+
+MODAL
+
+https://siongui.github.io/2018/02/11/bulma-modal-with-javascript/
+https://github.com/jgthms/bulma/issues/683
+https://postare.github.io/bulma-modal-fx/
+https://github.com/postare/bulma-modal-fx
+
+<template>
+
+
+    <!-- <div class="" >
+                            <span class="icon is-small has-text-primary" style="left:5px;">
+                                <i class="fa fa-chevron-up"></i>
+                                <strong class="has-text-grey-light">&nbsp10</strong>
+                            </span>
+                            <span class="icon is-small has-text-dark" style="position:relative; right:20px; top: 30px;">
+                                <i class="fa fa-chevron-down"></i>
+                                <strong class="has-text-grey-light">&nbsp10</strong>
+                            </span>
+                        </div> -->
+
+    <!-- <div class="" >
+       <span class="icon is-small has-text-primary" style="left:5px;">
+                                <i class="fa fa-chevron-up"></i>
+                                <strong class="has-text-grey-light">&nbsp10</strong>
+                            </span>
+                            <span class="icon is-small has-text-dark" style="position:relative; right:20px; top: 30px;">
+                                <i class="fa fa-chevron-down"></i>
+                                <strong class="has-text-grey-light">&nbsp10</strong>
+                            </span>
+                        </div> -->
+</template>
+
+<button class="icon is-small " type="button" style="position:relative; left:20px; top:5px;" onclick="upvote()">
+    <i class="fa fa-chevron-up upvote has-text-grey "></i>
+    <strong class="has-text-grey-light">&nbsp10</strong>
+</button>
+<span class="icon is-small " style="position:relative; left:0px; right:25px; top: 30px;" onclick="myFunction()">
+    <i class="fa fa-chevron-down downvote has-text-grey"></i>
+    <strong class="has-text-grey-light">&nbsp10</strong>
+</span>
+<!-- <script>
+    $("#avatarSelect").change(function() {
+        // alert($(this).val());
+        newpath = "images/avatars/" + $(this).val() + ".png";
+        $("#avatar").attr("src", newpath);
+        // var end = this.value;
+        // var firstDropVal = $('#pick').val();
+    });
+</script> -->
+<template>
+
+
+<div class="barder" style="visibility:hidden;">
+    <div class="columns is-gapless">
+        <div class="column is-one-third is-narrow">
+            <img class="image is-128x128 " id="avatar" src="<?php if (isset($_SESSION['fb_access_token'])) {
+                                                                echo $_SESSION['DETAILS']['avatar'];
+                                                            } else {
+                                                                echo "images\avatars\sloth.png";
+                                                            } ?>">
+            <div class="columns is-gapless">
+                <div class="column is-narrow">
+                    <div class="select is-small " style="margin-right:15px;"> <select id="avatarSelect" <?php if ((isset($_SESSION['fb_access_token']))) {
+                                                                                                            echo "disabled";
+                                                                                                        } ?>>
+                            <option disabled selected value> Default </option>
+                            <option value="cactus">Cactus</option>
+                            <option value="prof">Prof</option>
+                            <option value="bear">Bear</option>
+                            <option value="boy">Boy</option>
+                            <option value="girl">Girl</option>
+                            <option value="woman">Woman</option>
+                            <option value="shade">Shade</option>
+                            <option value="sheep">Sheep</option>
+                            <option value="spider">Spider</option>
+                            <option value="sloth">Sloth</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <?php
+                    if ((isset($_SESSION['fb_access_token']))) {
+
+                        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                        $fbButton = <<<HEREDOC
+                    <button class="button  logout is-small is-facebook " name="logout" value="{$url}" type=" button"><span class="icon is-small"><i class="fas fa-sign-out-alt"></i></span></button>
+                HEREDOC;
+                        echo $fbButton;
+                    } else {
+                        // echo "WEST";
+                        $FBUtil = new FBUtil;
+                        $helper = $fb->getRedirectLoginHelper();
+                        // $lagout = $helper->getLogoutUrl($_SESSION['fb_access_token'], "localhost/keikaku");
+                        $permissions = ['email', 'user_location, user_link']; // Optional permissions
+                        $loginUrl = $helper->getLoginUrl('http://localhost/keikaku/fb-callback.php', $permissions);
+                        // echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+                        $fbButton = <<<HEREDOC
+                        <button class="button is-small is-facebook"  onclick="location.href='{$FBUtil->SubmitURL($loginUrl)}'" type=" button"><span class="icon is-small" style="pointer-events: none;"><i class="fab fa-facebook" style="pointer-events: none;"></i></span></button>
+                    HEREDOC;
+                        echo $fbButton;
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="column is-vcentered">
+            <div class="field">
+                <label class="has-text-white label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" value="<?php
+                                                            if ((isset($_SESSION['fb_access_token']))) {
+                                                                echo $_SESSION['DETAILS']['name'];
+                                                            } else {
+                                                                echo "What shall we call you?";
+                                                            }
+                                                            ?>" readonly>
+                </div>
+            </div>
+            <!-- <div class="card">
+                <div class="card-content">
+                    <p class="title">
+                        
+                    </p>
+                    <p class="subtitle">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" value="This text is readonly" readonly>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+
+
+
+
+</div>

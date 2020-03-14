@@ -1,0 +1,4 @@
+Header set Access-Control-Allow-Origin "http://localhost:50000/"
+Header set Access-Control-Allow-Origin "http://localhost:80/"
+Header set Access-Control-Allow-Origin "http://localhost:8080/"
+Header set Access-Control-Allow-Origin "http://localhost:443/"

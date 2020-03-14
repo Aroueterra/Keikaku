@@ -1,0 +1,25 @@
+{
+  "name": "mangasea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bigSlide.js",
+  "dependencies": {
+    "bulma-modal-fx": "^1.1.1",
+    "cheerio": "^1.0.0-rc.3",
+    "deepmerge": "^4.2.2",
+    "html-entities": "^1.2.1",
+    "html2canvas": "^1.0.0-rc.5",
+    "lrucache": "^1.0.3",
+    "mangadex-api": "^2.0.1-b",
+    "mangadex-full-api": "^3.5.0"
+  },
+  "devDependencies": {
+    "@creativebulma/bulma-collapsible": "^1.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,57 @@
+//javascript outputs php
+<html>
+    <body>
+    <?php
+        $text = "Hello World!";
+    ?>
+    <script type="text/javascript">
+        document.write("<?php echo $text ?>");
+    </script>
+    <?php
+    //....php code...
+    ?>
+    </body>
+</html>
+
+//PHP outputs javascript
+echo <<<EOF
+<script type="text/javascript">
+    document.write("Hello World!");
+</script>
+EOF;
+
+or 
+
+$str = <<<MY_MARKER
+<script type="text/javascript">
+  document.write("Hello World!");
+</script>
+MY_MARKER;
+
+echo $str;
+
+
+BUILD 
+  <!-- <span class="tag is-link">blackbird was a sailor</span>
+                                                <span class="tag is-info">that's what you do</span> -->
+
+                                                <!-- <div class="field is-grouped is-grouped-multiline">
+                                                    <div class="control">
+                                                        <div class="tags has-addons">
+                                                            <span class="tag is-dark">npm</span>
+                                                            <span class="tag is-info">0.5.0</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field is-grouped is-grouped-multiline">
+                                                        <div class="control">
+                                                            <div class="tags has-addons">
+                                                                <span class="tag is-link">axiomaciae</span>
+                                                                <span class="tag is-info">24. 07. 2020</span>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <time datetime="2018-5-8">15:51 PM - 28 May 2018</time>
+
+                                                    </div>
+                                                </div> -->

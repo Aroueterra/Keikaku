@@ -1,0 +1,7 @@
+{
+    "require": {
+        "jikan-me/jikan": "^2.16",
+        "jikan/jikan-php": "^0.0.3",
+        "facebook/graph-sdk": "^5.7"
+    }
+}
