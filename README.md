@@ -1,5 +1,7 @@
 # Keikaku
  The anime watch plan sharing authority
+ 
+ Readme under construction!
 
 ## Make your plan!
  https://keikaku.000webhostapp.com/build.php
@@ -7,14 +9,14 @@
 ## Know a code?
  https://keikaku.000webhostapp.com/plan.php
  
-## Know a code?
+## Database Setup details
 
-$DATABASENAME = "id12910231_keikaku";
-$DATABASEUSER = "id12910231_root";
+$DATABASENAME = "keikaku";
+$DATABASEUSER = "root";
 $DBHOST = "localhost";
-$DBPASS = "password";
+$DBPASS = ;
 $WEBSITE = "https://keikaku.000webhostapp.com/";
 
-Tryme: illiterategenerousdeer 
+Tryme code: scratchyfatalborer 
 
 <img src='./images/main.png'>
